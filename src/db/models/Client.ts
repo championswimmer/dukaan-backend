@@ -1,4 +1,4 @@
-import {DefineAttributes, Instance, Model} from "sequelize";
+import {DefineAttributes, Instance, Model} from 'sequelize'
 import * as Sequelize from 'sequelize'
 
 export interface ClientAttributes {

@@ -7,9 +7,15 @@ exports.productCategoryAttrs = {
         primaryKey: true,
         autoIncrement: true
     },
-    secret: Sequelize.STRING(32),
-    whitelist_domains: Sequelize.ARRAY(Sequelize.STRING),
-    whitelist_ips: Sequelize.ARRAY(Sequelize.STRING),
-    redirect_url: Sequelize.STRING
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+    },
+    emi_allowed: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+        allowNull: false
+    }
 };
-//# sourceMappingURL=ProductCategories.js.map
+//# sourceMappingURL=ProductCategory.js.map

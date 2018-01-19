@@ -2,7 +2,8 @@ import * as Sequelize from 'sequelize'
 import {DataTypes} from 'sequelize'
 import * as config from '../../config'
 import {ClientAttributes, clientAttrs, ClientInstance} from './models/Client'
-import {ProductCategoryAttributes, productCategoryAttrs, ProductCategoryInstance} from './models/ProductCategories'
+import {ProductCategoryAttributes, productCategoryAttrs, ProductCategoryInstance} from './models/ProductCategory'
+import {TaxAttributes, taxAttrs, TaxInstance} from './models/Tax'
 
 const db = new Sequelize(
     config.DB.NAME,
@@ -20,4 +21,8 @@ export const ProductCategories =
         'product_categories',
         productCategoryAttrs
     )
-
+export const Tax =
+    db.define<TaxInstance, TaxAttributes>(
+        'tax',
+        taxAttrs
+    )
