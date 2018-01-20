@@ -26,3 +26,9 @@ export const Tax =
         'tax',
         taxAttrs
     )
+
+Clients.find({
+    where: {
+
+    }
+})

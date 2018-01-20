@@ -11,4 +11,7 @@ const db = new Sequelize(config.DB.NAME, config.DB.USER, config.DB.PASSWORD, {
 exports.Clients = db.define('clients', Client_1.clientAttrs);
 exports.ProductCategories = db.define('product_categories', ProductCategory_1.productCategoryAttrs);
 exports.Tax = db.define('tax', Tax_1.taxAttrs);
+exports.Clients.find({
+    where: {}
+});
 //# sourceMappingURL=index.js.map

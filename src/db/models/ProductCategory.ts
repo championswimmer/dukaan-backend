@@ -7,10 +7,8 @@ export interface ProductCategoryAttributes {
     emi_allowed: boolean,
 }
 
-type ProductCategoryKeys = keyof ProductCategoryAttributes
-
 type ProductCategoryDefineAttributes = {
-    [x in ProductCategoryKeys]: string | DataTypeAbstract | DefineAttributeColumnOptions
+    [x in keyof ProductCategoryAttributes]: string | DataTypeAbstract | DefineAttributeColumnOptions
 }
 
 export const productCategoryAttrs: ProductCategoryDefineAttributes = {

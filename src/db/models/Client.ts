@@ -1,4 +1,4 @@
-import {DefineAttributes, Instance, Model} from 'sequelize'
+import {DataTypeAbstract, DefineAttributeColumnOptions, DefineAttributes, Instance, Model} from 'sequelize'
 import * as Sequelize from 'sequelize'
 
 export interface ClientAttributes {
@@ -6,10 +6,14 @@ export interface ClientAttributes {
     secret: string,
     whitelist_domains: string[],
     whitelist_ips: string[],
-    redirect_url: string[]
+    redirect_url: string
 }
 
-export const clientAttrs: DefineAttributes = {
+type ClientDefineAttributes = {
+    [x in keyof ClientAttributes]: string | DataTypeAbstract | DefineAttributeColumnOptions
+}
+
+export const clientAttrs: ClientDefineAttributes = {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
