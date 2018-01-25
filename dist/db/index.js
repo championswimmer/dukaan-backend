@@ -20,4 +20,14 @@ exports.Clients = db.define('clients', Client_1.clientAttrs, defaultTableOptions
 exports.ProductCategories = db.define('product_categories', ProductCategory_1.productCategoryAttrs, defaultTableOptions);
 exports.Tax = db.define('tax', Tax_1.taxAttrs, defaultTableOptions);
 exports.Product = db.define('product', Product_1.productAttrs, defaultTableOptions);
+// product will have fk(product_categegory_id)
+exports.Product.belongsTo(exports.ProductCategories);
+exports.ProductCategories.hasMany(exports.Product);
+/**
+ * Keeping a 1:1 mapping because we'll create one Tax 'row'
+ * as a _set of taxes_. So CGST+SGST will be a type of Tax
+ * a single row called GST
+ *
+ */
+exports.Product.belongsTo(exports.Tax);
 //# sourceMappingURL=index.js.map

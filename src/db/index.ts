@@ -49,3 +49,15 @@ export const Product =
         productAttrs,
         defaultTableOptions
     )
+
+// product will have fk(product_categegory_id)
+Product.belongsTo(ProductCategories)
+ProductCategories.hasMany(Product)
+
+/**
+ * Keeping a 1:1 mapping because we'll create one Tax 'row'
+ * as a _set of taxes_. So CGST+SGST will be a type of Tax
+ * a single row called GST
+ *
+ */
+Product.belongsTo(Tax)
