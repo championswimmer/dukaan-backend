@@ -4,10 +4,17 @@
   "description": "Coding Blocks Shop Backend",
   "main": "dist/server.js",
   "scripts": {
-    "docs": "typedoc --ignoreCompilerErrors --mode modules --name dukaan --theme minimal --out docs/src src",
+    "docs.api": "apidoc -i src -o docs/api",
+    "docs.src": "typedoc --ignoreCompilerErrors --mode modules --name dukaan --theme minimal --out docs/src src",
+    "docs": "npm run docs.api && npm run docs.src",
     "clean": "rimraf dist && mkdirp dist",
     "prebuild": "npm run clean",
     "build": "tsc"
+  },
+  "apidoc": {
+    "title": "Dukaan API",
+    "url": "https://dukaan.cb.lk",
+    "sampleUrl": "http://dukaan.cb.lk/api"
   },
   "repository": {
     "type": "git",
@@ -28,6 +35,7 @@
   "devDependencies": {
     "@types/express": "^4.11.0",
     "@types/sequelize": "^4.27.3",
+    "apidoc": "^0.17.6",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2",
     "tslint": "^5.9.1",

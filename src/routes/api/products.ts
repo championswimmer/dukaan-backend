@@ -5,7 +5,11 @@ import {validateGetProductsReq} from '../../validators/api/products'
 const route = Router()
 
 /**
- * Get all products
+ * @api {get} /products GET /products
+ * @apiDescription Get all products
+ * @apiName GetProducts
+ * @apiGroup Products
+ * @apiVersion 0.0.1
  */
 route.get('/', (req, res, next) => {
     validateGetProductsReq(req)
@@ -16,7 +20,14 @@ route.get('/', (req, res, next) => {
 })
 
 /**
- * Add a new product
+ * @api {post} /products POST /products
+ * @apiDescription Add a new product
+ * @apiName AddProduct
+ * @apiGroup Products
+ * @apiVersion 0.0.1
+ *
+ * @apiParam {string[]} fields
+ *      The fields you want to query, (all fields if left blank)
  */
 route.post('/', (req, res, next) => {
 
