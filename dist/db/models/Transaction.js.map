@@ -1,0 +1,1 @@
+{"version":3,"file":"Transaction.js","sourceRoot":"/Users/championswimmer/Development/CodingBlocks/NodeJS/dukaan-backend/","sources":["db/models/Transaction.ts"],"names":[],"mappings":";;AACA,uCAAsC;AAUzB,QAAA,gBAAgB,GAAgC;IACzD,EAAE,EAAE;QACA,IAAI,EAAE,SAAS,CAAC,OAAO;QACvB,UAAU,EAAE,IAAI;QAChB,aAAa,EAAE,IAAI;KACtB;CACJ,CAAA"}

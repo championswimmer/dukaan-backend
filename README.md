@@ -36,7 +36,7 @@ npm run docs
 
 ### Top Level Structure
 
-```
+```text
 .
 ├── README.md
 ├── config.js           # Configs (eg, DB)
@@ -69,7 +69,7 @@ route.get('/', (req, res, next) => {
 
 ### Source Code Structure
 
-```
+```text
 src
 ├── controllers                 # All controllers
 │   └── data                    # Data controllers

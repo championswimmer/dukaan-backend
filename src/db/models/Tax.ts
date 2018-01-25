@@ -3,6 +3,10 @@ import * as Sequelize from 'sequelize'
 
 export interface TaxAttributes {
     id: number
+    name: string
+    name_admin: string
+    percentage: number
+    sub_taxes: any[]
 }
 
 type TaxKeys = keyof TaxAttributes
@@ -16,7 +20,18 @@ export const taxAttrs: TaxDefineAttributes = {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
-    }
+    },
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    name_admin: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+    },
+    percentage: Sequelize.INTEGER,
+    sub_taxes: Sequelize.ARRAY(Sequelize.JSONB)
 }
 
 export interface TaxInstance extends Instance<TaxAttributes> {

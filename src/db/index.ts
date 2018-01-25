@@ -50,7 +50,7 @@ export const Product =
         defaultTableOptions
     )
 
-// product will have fk(product_categegory_id)
+// product will have fk(product_category_id)
 Product.belongsTo(ProductCategories)
 ProductCategories.hasMany(Product)
 

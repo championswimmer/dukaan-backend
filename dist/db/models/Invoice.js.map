@@ -1,0 +1,1 @@
+{"version":3,"file":"Invoice.js","sourceRoot":"/Users/championswimmer/Development/CodingBlocks/NodeJS/dukaan-backend/","sources":["db/models/Invoice.ts"],"names":[],"mappings":";;AACA,uCAAsC;AAUzB,QAAA,YAAY,GAA4B;IACjD,EAAE,EAAE;QACA,IAAI,EAAE,SAAS,CAAC,OAAO;QACvB,UAAU,EAAE,IAAI;QAChB,aAAa,EAAE,IAAI;KACtB;CACJ,CAAA"}

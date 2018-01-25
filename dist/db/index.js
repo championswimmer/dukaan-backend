@@ -20,7 +20,7 @@ exports.Clients = db.define('clients', Client_1.clientAttrs, defaultTableOptions
 exports.ProductCategories = db.define('product_categories', ProductCategory_1.productCategoryAttrs, defaultTableOptions);
 exports.Tax = db.define('tax', Tax_1.taxAttrs, defaultTableOptions);
 exports.Product = db.define('product', Product_1.productAttrs, defaultTableOptions);
-// product will have fk(product_categegory_id)
+// product will have fk(product_category_id)
 exports.Product.belongsTo(exports.ProductCategories);
 exports.ProductCategories.hasMany(exports.Product);
 /**
