@@ -4,6 +4,7 @@
   "description": "Coding Blocks Shop Backend",
   "main": "dist/server.js",
   "scripts": {
+    "docs": "typedoc --ignoreCompilerErrors --mode modules --name dukaan --theme minimal --out docs/src src",
     "clean": "rimraf dist && mkdirp dist",
     "prebuild": "npm run clean",
     "build": "tsc"
@@ -30,6 +31,7 @@
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2",
     "tslint": "^5.9.1",
+    "typedoc": "^0.9.0",
     "typescript": "^2.6.2"
   }
 }
