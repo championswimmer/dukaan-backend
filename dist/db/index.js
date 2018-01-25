@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Sequelize = require("sequelize");
 const config = require("../../config");
 const Client_1 = require("./models/Client");
+const Product_1 = require("./models/Product");
 const ProductCategory_1 = require("./models/ProductCategory");
 const Tax_1 = require("./models/Tax");
 const db = new Sequelize(config.DB.NAME, config.DB.USER, config.DB.PASSWORD, {
@@ -11,7 +12,5 @@ const db = new Sequelize(config.DB.NAME, config.DB.USER, config.DB.PASSWORD, {
 exports.Clients = db.define('clients', Client_1.clientAttrs);
 exports.ProductCategories = db.define('product_categories', ProductCategory_1.productCategoryAttrs);
 exports.Tax = db.define('tax', Tax_1.taxAttrs);
-exports.Clients.find({
-    where: {}
-});
+exports.Product = db.define('product', Product_1.productAttrs);
 //# sourceMappingURL=index.js.map

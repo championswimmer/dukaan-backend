@@ -2,6 +2,7 @@ import * as Sequelize from 'sequelize'
 import {DataTypes} from 'sequelize'
 import * as config from '../../config'
 import {ClientAttributes, clientAttrs, ClientInstance} from './models/Client'
+import {ProductAttributes, productAttrs, ProductInstance} from './models/Product'
 import {ProductCategoryAttributes, productCategoryAttrs, ProductCategoryInstance} from './models/ProductCategory'
 import {TaxAttributes, taxAttrs, TaxInstance} from './models/Tax'
 
@@ -27,8 +28,8 @@ export const Tax =
         taxAttrs
     )
 
-Clients.find({
-    where: {
-
-    }
-})
+export const Product =
+    db.define<ProductInstance, ProductAttributes>(
+        'product',
+        productAttrs
+    )
