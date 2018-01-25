@@ -1,5 +1,5 @@
 import * as Sequelize from 'sequelize'
-import {DataTypes} from 'sequelize'
+import {DataTypes, DefineOptions} from 'sequelize'
 import * as config from '../../config'
 import {ClientAttributes, clientAttrs, ClientInstance} from './models/Client'
 import {ProductAttributes, productAttrs, ProductInstance} from './models/Product'
@@ -14,22 +14,38 @@ const db = new Sequelize(
         dialect: 'postgres'
     }
 )
+
+const defaultTableOptions: DefineOptions<any> = {
+    timestamps: true,
+    paranoid: true,
+    underscored: true,
+    underscoredAll: true,
+    freezeTableName: true
+}
+
 export const Clients =
-    db.define<ClientInstance, ClientAttributes>('clients', clientAttrs)
+    db.define<ClientInstance, ClientAttributes>(
+        'clients',
+        clientAttrs,
+        defaultTableOptions
+    )
 
 export const ProductCategories =
     db.define<ProductCategoryInstance, ProductCategoryAttributes>(
         'product_categories',
-        productCategoryAttrs
+        productCategoryAttrs,
+        defaultTableOptions
     )
 export const Tax =
     db.define<TaxInstance, TaxAttributes>(
         'tax',
-        taxAttrs
+        taxAttrs,
+        defaultTableOptions
     )
 
 export const Product =
     db.define<ProductInstance, ProductAttributes>(
         'product',
-        productAttrs
+        productAttrs,
+        defaultTableOptions
     )
