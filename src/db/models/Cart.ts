@@ -33,7 +33,12 @@ export const cartAttrs: CartDefineAttributes = {
         allowNull: false
     },
     payment_status: {
-        // FIXME: DEFINE THIS
+        type: Sequelize.ENUM( // FIXME: Finalize the enum params
+            'unpaid',
+            'partial',
+            'paid'
+        ),
+        allowNull: false
     },
     amount: {
         type: Sequelize.FLOAT,

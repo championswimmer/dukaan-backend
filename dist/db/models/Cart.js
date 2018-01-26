@@ -19,7 +19,11 @@ exports.cartAttrs = {
         type: Sequelize.ARRAY,
         allowNull: false
     },
-    payment_status: {},
+    payment_status: {
+        type: Sequelize.ENUM(// FIXME: Finalize the enum params
+        'unpaid', 'partial', 'paid'),
+        allowNull: false
+    },
     amount: {
         type: Sequelize.FLOAT,
         allowNull: false

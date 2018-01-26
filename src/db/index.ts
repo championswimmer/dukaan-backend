@@ -5,6 +5,11 @@ import {ClientAttributes, clientAttrs, ClientInstance} from './models/Client'
 import {ProductAttributes, productAttrs, ProductInstance} from './models/Product'
 import {ProductCategoryAttributes, productCategoryAttrs, ProductCategoryInstance} from './models/ProductCategory'
 import {TaxAttributes, taxAttrs, TaxInstance} from './models/Tax'
+import {InvoiceAttributes, invoiceAttrs, InvoiceInstance} from './models/Invoice'
+import {CouponAttributes, couponAttrs, CouponInstance} from './models/Coupon'
+import {UserAttributes, userAttrs, UserInstance} from './models/User'
+import {CartAttributes, cartAttrs, CartInstance} from './models/Cart'
+import {TransactionAttributes, transactionAttrs, TransactionInstance} from './models/Transaction'
 
 const db = new Sequelize(
     config.DB.NAME,
@@ -30,6 +35,12 @@ export const Clients =
         defaultTableOptions
     )
 
+export const User =
+    db.define<UserInstance, UserAttributes>(
+        'user',
+        userAttrs
+    )
+
 export const ProductCategories =
     db.define<ProductCategoryInstance, ProductCategoryAttributes>(
         'product_categories',
@@ -50,14 +61,27 @@ export const Product =
         defaultTableOptions
     )
 
-// product will have fk(product_category_id)
-Product.belongsTo(ProductCategories)
-ProductCategories.hasMany(Product)
+export const Coupon =
+    db.define<CouponInstance, CouponAttributes>(
+        'coupon',
+        couponAttrs
+    )
 
-/**
- * Keeping a 1:1 mapping because we'll create one Tax 'row'
- * as a _set of taxes_. So CGST+SGST will be a type of Tax
- * a single row called GST
- *
- */
-Product.belongsTo(Tax)
+export const Invoice =
+    db.define<InvoiceInstance, InvoiceAttributes>(
+        'invoice',
+        invoiceAttrs
+    )
+
+export const Cart =
+    db.define<CartInstance, CartAttributes>(
+        'cart',
+        cartAttrs
+    )
+
+export const Transaction =
+    db.define<TransactionInstance, TransactionAttributes>(
+        'transaction',
+        transactionAttrs
+    )
+
