@@ -8,7 +8,7 @@ export interface UserAttributes {
 }
 
 type UserDefineAttributes = {
-    [x in keyof UserAttributes]: string | DataTypeAbstract | DefineAttributeColumnOptions
+    [x in keyof Partial<UserAttributes>]: string | DataTypeAbstract | DefineAttributeColumnOptions
     }
 
 export const userAttrs: UserDefineAttributes = {

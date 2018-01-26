@@ -11,7 +11,7 @@ export interface CartAttributes {
 }
 
 type CartDefineAttributes = {
-    [x in keyof CartAttributes]: string | DataTypeAbstract | DefineAttributeColumnOptions
+    [x in keyof Partial<CartAttributes>]: string | DataTypeAbstract | DefineAttributeColumnOptions
     }
 
 export const cartAttrs: CartDefineAttributes = {

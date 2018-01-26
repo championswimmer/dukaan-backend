@@ -26,7 +26,17 @@ exports.User = exports.db.define('users', User_1.userAttrs);
 exports.ProductCategory = exports.db.define('product_categories', ProductCategory_1.productCategoryAttrs, defaultTableOptions);
 exports.Tax = exports.db.define('taxes', Tax_1.taxAttrs, defaultTableOptions);
 exports.Product = exports.db.define('products', Product_1.productAttrs, defaultTableOptions);
-exports.Product.belongsTo(exports.ProductCategory);
+exports.Product.belongsTo(exports.ProductCategory, { foreignKey: { allowNull: false } });
+exports.ProductCategory.hasMany(exports.Product);
+exports.Product.belongsTo(exports.Tax);
+exports.Product.belongsTo(exports.Client, {
+    as: 'owner_client',
+    foreignKey: { allowNull: false }
+});
+exports.Product.belongsTo(exports.User, {
+    as: 'owner_user',
+    foreignKey: { allowNull: true }
+});
 exports.Coupon = exports.db.define('coupons', Coupon_1.couponAttrs);
 exports.Invoice = exports.db.define('invoices', Invoice_1.invoiceAttrs);
 exports.Cart = exports.db.define('carts', Cart_1.cartAttrs);

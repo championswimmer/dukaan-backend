@@ -1,5 +1,6 @@
 import {DataTypeAbstract, DefineAttributeColumnOptions, DefineAttributes, Instance, Model} from 'sequelize'
 import * as Sequelize from 'sequelize'
+import {ProductCategoryInstance} from './ProductCategory'
 
 export interface ProductAttributes {
     id: number
@@ -12,12 +13,13 @@ export interface ProductAttributes {
     listed: boolean
     instances?: number
     per_user: number,
+    category: ProductCategoryInstance
     redirect_url?: string
 
 }
 
 type ProductDefineAttributes = {
-    [x in keyof ProductAttributes]: string | DataTypeAbstract | DefineAttributeColumnOptions
+    [x in keyof Partial<ProductAttributes>]: string | DataTypeAbstract | DefineAttributeColumnOptions
     }
 
 export const productAttrs: ProductDefineAttributes = {
@@ -31,30 +33,6 @@ export const productAttrs: ProductDefineAttributes = {
         allowNull: false,
         unique: true
     },
-    // category: {
-    //     type: Sequelize.INTEGER,
-    //     references: {
-    //         model: 'ProductCategory',
-    //         key: 'id'
-    //     },
-    //     allowNull: false
-    // },
-    // owner_client: {
-    //     type: Sequelize.INTEGER,
-    //     references: {
-    //         model: 'Client',
-    //         key: 'id'
-    //     },
-    //     allowNull: false
-    // },
-    // owner_user: {
-    //     type: Sequelize.INTEGER,
-    //     references: {
-    //         model: 'User',
-    //         key: 'id'
-    //     },
-    //     allowNull: false
-    // },
     mrp: {
         type: Sequelize.FLOAT,
         allowNull: false
@@ -70,9 +48,6 @@ export const productAttrs: ProductDefineAttributes = {
     emi_min_repeat: {
         type: Sequelize.FLOAT
     },
-    // taxes: {
-    //     type: Sequelize.ARRAY
-    // },
     display_slug: {
         type: Sequelize.STRING,
         allowNull: false

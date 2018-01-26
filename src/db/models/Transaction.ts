@@ -15,7 +15,7 @@ export interface TransactionAttributes {
 }
 
 type TransactionDefineAttributes = {
-    [x in keyof TransactionAttributes]: string | DataTypeAbstract | DefineAttributeColumnOptions
+    [x in keyof Partial<TransactionAttributes>]: string | DataTypeAbstract | DefineAttributeColumnOptions
     }
 
 export const transactionAttrs: TransactionDefineAttributes = {

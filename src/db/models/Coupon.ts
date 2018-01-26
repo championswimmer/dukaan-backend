@@ -17,7 +17,7 @@ export interface CouponAttributes {
 }
 
 type CouponDefineAttributes = {
-    [x in keyof CouponAttributes]: string | DataTypeAbstract | DefineAttributeColumnOptions
+    [x in keyof Partial<CouponAttributes>]: string | DataTypeAbstract | DefineAttributeColumnOptions
     }
 
 export const couponAttrs: CouponDefineAttributes = {

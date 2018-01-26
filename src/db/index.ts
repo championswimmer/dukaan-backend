@@ -61,7 +61,19 @@ export const Product =
         defaultTableOptions
     )
 
-Product.belongsTo(ProductCategory)
+Product.belongsTo(ProductCategory, {foreignKey: {allowNull: false}})
+ProductCategory.hasMany(Product)
+
+Product.belongsTo(Tax)
+
+Product.belongsTo(Client, {
+    as: 'owner_client',
+    foreignKey: {allowNull: false}
+})
+Product.belongsTo(User, {
+    as: 'owner_user',
+    foreignKey: {allowNull: true}
+})
 
 export const Coupon =
     db.define<CouponInstance, CouponAttributes>(

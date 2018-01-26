@@ -12,30 +12,6 @@ exports.productAttrs = {
         allowNull: false,
         unique: true
     },
-    // category: {
-    //     type: Sequelize.INTEGER,
-    //     references: {
-    //         model: 'ProductCategory',
-    //         key: 'id'
-    //     },
-    //     allowNull: false
-    // },
-    // owner_client: {
-    //     type: Sequelize.INTEGER,
-    //     references: {
-    //         model: 'Client',
-    //         key: 'id'
-    //     },
-    //     allowNull: false
-    // },
-    // owner_user: {
-    //     type: Sequelize.INTEGER,
-    //     references: {
-    //         model: 'User',
-    //         key: 'id'
-    //     },
-    //     allowNull: false
-    // },
     mrp: {
         type: Sequelize.FLOAT,
         allowNull: false
@@ -51,9 +27,6 @@ exports.productAttrs = {
     emi_min_repeat: {
         type: Sequelize.FLOAT
     },
-    // taxes: {
-    //     type: Sequelize.ARRAY
-    // },
     display_slug: {
         type: Sequelize.STRING,
         allowNull: false

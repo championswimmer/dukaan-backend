@@ -10,7 +10,7 @@ export interface ClientAttributes {
 }
 
 type ClientDefineAttributes = {
-    [x in keyof ClientAttributes]: string | DataTypeAbstract | DefineAttributeColumnOptions
+    [x in keyof Partial<ClientAttributes>]: string | DataTypeAbstract | DefineAttributeColumnOptions
 }
 
 export const clientAttrs: ClientDefineAttributes = {

@@ -13,7 +13,7 @@ export interface InvoiceAttributes {
 }
 
 type InvoiceDefineAttributes = {
-    [x in keyof InvoiceAttributes]: string | DataTypeAbstract | DefineAttributeColumnOptions
+    [x in keyof Partial<InvoiceAttributes>]: string | DataTypeAbstract | DefineAttributeColumnOptions
     }
 
 export const invoiceAttrs: InvoiceDefineAttributes = {

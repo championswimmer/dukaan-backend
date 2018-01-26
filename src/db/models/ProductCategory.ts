@@ -8,7 +8,7 @@ export interface ProductCategoryAttributes {
 }
 
 type ProductCategoryDefineAttributes = {
-    [x in keyof ProductCategoryAttributes]: string | DataTypeAbstract | DefineAttributeColumnOptions
+    [x in keyof Partial<ProductCategoryAttributes>]: string | DataTypeAbstract | DefineAttributeColumnOptions
 }
 
 export const productCategoryAttrs: ProductCategoryDefineAttributes = {
