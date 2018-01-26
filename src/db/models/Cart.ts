@@ -3,7 +3,7 @@ import * as Sequelize from 'sequelize'
 
 export interface CartAttributes {
     id: number
-    invoices: any[]
+    // invoices: any[] // TODO: Do via map table
     payment_status: any // TODO: Set type
     amount: number
     credits_used: number
@@ -28,10 +28,10 @@ export const cartAttrs: CartDefineAttributes = {
     //     },
     //     allowNull: false
     // },
-    invoices: {
-        type: Sequelize.ARRAY,
-        allowNull: false
-    },
+    // invoices: {
+    //     type: Sequelize.ARRAY,
+    //     allowNull: false
+    // },
     payment_status: {
         type: Sequelize.ENUM( // FIXME: Finalize the enum params
             'unpaid',

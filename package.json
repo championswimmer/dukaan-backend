@@ -9,7 +9,11 @@
     "docs": "npm run docs.api && npm run docs.src",
     "clean": "rimraf dist && mkdirp dist",
     "prebuild": "npm run clean",
-    "build": "tsc"
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node dist/start.js",
+    "predebug": "npm run build",
+    "debug": "DEBUG=* node dist/start.js"
   },
   "apidoc": {
     "title": "Dukaan API",
@@ -23,6 +27,7 @@
   "author": "Coding Blocks <dev@codingblocks.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "debug": "^3.1.0",
     "express": "^4.16.2",
     "pg": "^6.4.2",
     "sequelize": "^4.31.2"

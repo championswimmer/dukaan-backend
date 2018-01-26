@@ -1,1 +1,1 @@
-{"version":3,"file":"server.js","sourceRoot":"/Users/championswimmer/Development/CodingBlocks/NodeJS/dukaan-backend/","sources":["server.ts"],"names":[],"mappings":";;AAAA,mCAAkC;AAGlC,MAAM,GAAG,GAAG,OAAO,EAAE,CAAA;AAGjB,kBAAG"}
+{"version":3,"file":"server.js","sourceRoot":"/Users/championswimmer/Development/CodingBlocks/NodeJS/dukaan-backend/","sources":["server.ts"],"names":[],"mappings":";;AAAA,mCAAkC;AAClC,oCAAmC;AAM/B,wBAAM;AAJV,MAAM,GAAG,GAAG,OAAO,EAAE,CAAA;AAGjB,kBAAG"}

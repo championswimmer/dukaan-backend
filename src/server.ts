@@ -4,5 +4,6 @@ import * as config from '../config'
 const app = express()
 
 export {
-    app
+    app,
+    config
 }

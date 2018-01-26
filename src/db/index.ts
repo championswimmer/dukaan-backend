@@ -11,7 +11,7 @@ import {UserAttributes, userAttrs, UserInstance} from './models/User'
 import {CartAttributes, cartAttrs, CartInstance} from './models/Cart'
 import {TransactionAttributes, transactionAttrs, TransactionInstance} from './models/Transaction'
 
-const db = new Sequelize(
+export const db = new Sequelize(
     config.DB.NAME,
     config.DB.USER,
     config.DB.PASSWORD,
@@ -28,7 +28,7 @@ const defaultTableOptions: DefineOptions<any> = {
     freezeTableName: true
 }
 
-export const Clients =
+export const Client =
     db.define<ClientInstance, ClientAttributes>(
         'clients',
         clientAttrs,
@@ -37,11 +37,11 @@ export const Clients =
 
 export const User =
     db.define<UserInstance, UserAttributes>(
-        'user',
+        'users',
         userAttrs
     )
 
-export const ProductCategories =
+export const ProductCategory =
     db.define<ProductCategoryInstance, ProductCategoryAttributes>(
         'product_categories',
         productCategoryAttrs,
@@ -49,39 +49,40 @@ export const ProductCategories =
     )
 export const Tax =
     db.define<TaxInstance, TaxAttributes>(
-        'tax',
+        'taxes',
         taxAttrs,
         defaultTableOptions
     )
 
 export const Product =
     db.define<ProductInstance, ProductAttributes>(
-        'product',
+        'products',
         productAttrs,
         defaultTableOptions
     )
 
+Product.belongsTo(ProductCategory)
+
 export const Coupon =
     db.define<CouponInstance, CouponAttributes>(
-        'coupon',
+        'coupons',
         couponAttrs
     )
 
 export const Invoice =
     db.define<InvoiceInstance, InvoiceAttributes>(
-        'invoice',
+        'invoices',
         invoiceAttrs
     )
 
 export const Cart =
     db.define<CartInstance, CartAttributes>(
-        'cart',
+        'carts',
         cartAttrs
     )
 
 export const Transaction =
     db.define<TransactionInstance, TransactionAttributes>(
-        'transaction',
+        'transactions',
         transactionAttrs
     )
-

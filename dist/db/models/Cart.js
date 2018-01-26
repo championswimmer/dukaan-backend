@@ -15,10 +15,10 @@ exports.cartAttrs = {
     //     },
     //     allowNull: false
     // },
-    invoices: {
-        type: Sequelize.ARRAY,
-        allowNull: false
-    },
+    // invoices: {
+    //     type: Sequelize.ARRAY,
+    //     allowNull: false
+    // },
     payment_status: {
         type: Sequelize.ENUM(// FIXME: Finalize the enum params
         'unpaid', 'partial', 'paid'),
